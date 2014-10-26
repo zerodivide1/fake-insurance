@@ -18,19 +18,23 @@ public class Application extends Controller {
         return ok(index.render("Your new application is ready."));
     }
 
-    public static Result addPage() {
-        return ok(add.render());
+    public static Result maintenance() {
+        return ok(maintenance.render());
     }
 
     public static Result addRegionRate() {
         InsuranceRegion region = Form.form(InsuranceRegion.class).bindFromRequest().get();
         region.save();
-        return redirect(routes.Application.addPage());
+        return redirect(routes.Application.maintenance());
     }
 
     public static Result listRates() {
         List<InsuranceRegion> rates = new Model.Finder(long.class, InsuranceRegion.class).all();
         return ok(toJson(rates));
+    }
+
+    public static Result lookup() {
+        return ok();
     }
 
 }

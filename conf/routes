@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET     /add                        controllers.Application.addPage()
+GET     /maintenance                controllers.Application.maintenance()
 POST    /regionRate                 controllers.Application.addRegionRate()
 
 GET     /listRates                  controllers.Application.listRates()

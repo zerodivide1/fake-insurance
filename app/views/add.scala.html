@@ -3,9 +3,43 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Fake Insurance Co</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src='@routes.Assets.at("js/index.js")'></script>
 </head>
 <body>
   <section class="content">
+      <label for="maleRates">Male:</label>
+      <table id="maleRates" border="1">
+          <thead>
+              <tr>
+                  <td><label for="rate0">0</label></td>
+                  <td><label for="rate20">20</label></td>
+                  <td><label for="rate30">30</label></td>
+                  <td><label for="rate40">40</label></td>
+                  <td><label for="rate50">50</label></td>
+                  <td><label for="rate60">60</label></td>
+                  <td><label for="rate70">70</label></td>
+              </tr>
+          </thead>
+          <tbody/>
+      </table>
+
+      <label for="femaleRates">Female:</label>
+      <table id="femaleRates" border="1">
+          <thead>
+          <tr>
+              <td><label for="rate0">0</label></td>
+              <td><label for="rate20">20</label></td>
+              <td><label for="rate30">30</label></td>
+              <td><label for="rate40">40</label></td>
+              <td><label for="rate50">50</label></td>
+              <td><label for="rate60">60</label></td>
+              <td><label for="rate70">70</label></td>
+          </tr>
+          </thead>
+          <tbody/>
+      </table>
+
       <form action="@routes.Application.addRegionRate()" method="POST">
           <div>
               <label for="zipBase">ZIP:</label>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fake Insurance Co</title>
+</head>
+<body>
+  <section class="content">
+      <form action="@routes.Application.addRegionRate()" method="POST">
+          <div>
+              <label for="zipBase">ZIP:</label>
+              <input type="text" name="zipBase" id="zipBase"/>
+          </div>
+
+          <div>
+              <label>Gender:</label>
+              <input type="radio" name="gender" value="male">Male <input type="radio" name="gender" value="female">Female
+          </div>
+
+          <table>
+              <thead>
+                <tr>
+                    <td><label for="rate0">0</label></td>
+                    <td><label for="rate20">20</label></td>
+                    <td><label for="rate30">30</label></td>
+                    <td><label for="rate40">40</label></td>
+                    <td><label for="rate50">50</label></td>
+                    <td><label for="rate60">60</label></td>
+                    <td><label for="rate70">70</label></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td><input type="text" name="rate0" id="rate0"/></td>
+                    <td><input type="text" name="rate20" id="rate20"/></td>
+                    <td><input type="text" name="rate30" id="rate30"/></td>
+                    <td><input type="text" name="rate40" id="rate40"/></td>
+                    <td><input type="text" name="rate50" id="rate50"/></td>
+                    <td><input type="text" name="rate60" id="rate60"/></td>
+                    <td><input type="text" name="rate70" id="rate70"/></td>
+                </tr>
+              </tbody>
+          </table>
+          <div>
+              <button>Add</button>
+          </div>
+      </form>
+  </section>
+</body>
+</html>

@@ -3,11 +3,13 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
-GET     /maintenance                controllers.Application.maintenance()
-POST    /regionRate                 controllers.Application.addRegionRate()
+GET     /                               controllers.Application.index()
+GET     /maintenance                    controllers.Application.maintenance()
+POST    /regionRate                     controllers.Application.addRegionRate()
 
-GET     /listRates                  controllers.Application.listRates()
+GET     /listRates                      controllers.Application.listRates()
+
+GET     /deleteRate/:id                 controllers.Application.deleteRate(id)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

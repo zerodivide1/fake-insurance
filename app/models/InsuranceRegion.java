@@ -2,15 +2,17 @@ package models;
 
 import play.db.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 
 /**
  * Created by Sean on 10/25/2014.
  */
 @Entity @IdClass(InsuranceRegionId.class)
 public class InsuranceRegion extends Model {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    public int id;
+
     @Id
     public long zipBase;
 

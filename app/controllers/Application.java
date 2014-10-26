@@ -1,5 +1,6 @@
 package controllers;
 
+import models.InsuranceRegionId;
 import play.*;
 import models.InsuranceRegion;
 import play.data.Form;
@@ -29,12 +30,19 @@ public class Application extends Controller {
     }
 
     public static Result listRates() {
-        List<InsuranceRegion> rates = new Model.Finder(long.class, InsuranceRegion.class).all();
+        List<InsuranceRegion> rates = new Model.Finder(InsuranceRegionId.class, InsuranceRegion.class).all();
         return ok(toJson(rates));
     }
 
-    public static Result lookup() {
-        return ok();
-    }
+    public static Result deleteRate(String id) {
+        List<InsuranceRegion> regions = new Model.Finder(InsuranceRegionId.class, InsuranceRegion.class)
+                .where()
+                .eq("id", Integer.parseInt(id))
+                .findList();
+        if(regions.size() > 0) {
+            regions.get(0).delete();
+        }
 
+        return redirect(routes.Application.maintenance());
+    }
 }
